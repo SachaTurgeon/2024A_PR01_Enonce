@@ -31,19 +31,18 @@ def create_board():
 def create_coins(board):
     coins = []
 
-    for y in board:
-        for x in y:
+    for index_y, y in enumerate(board):
+        for index_x, x in enumerate(y):
             if x == 0:
-                coins.append((y[x], board[y]))
-                print(coins)
+                coins.append((index_x, index_y))
 
-    """for i in special_coins_pos:
+    for i in special_coins_pos:
         if i in coins:
-            coins.remove(i)"""
+            coins.remove(i)
 
-    """for j in center_pos:
-        if j in coins:
-            coins.remove(j)"""
+    for i in center_pos:
+        if i in coins:
+            coins.remove(i)
 
     # TODO: Ajouter la position de toutes les cases '0' à la variable coins. Pour ajouter un élément, vous pouvez utiliser l'expression suivante :
     # coins.append((x, y))
@@ -57,6 +56,9 @@ def create_coins(board):
 
 def create_special_coins(board):
     special_coins = []
+
+    for i in special_coins_pos:
+        special_coins.append(i)
 
     # TODO: Ajouter des coins aux positions spéciales, en utilisant la variable 'special_coins_pos'.
     
