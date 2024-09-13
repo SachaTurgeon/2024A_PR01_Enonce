@@ -94,17 +94,17 @@ class Game:
 
     def handle_keypress(self, event):
         if event.key == pygame.K_RIGHT:
-            if self.check_collision((-1,0)) == False:
+            if self.check_collision((1, 0)) == False:
                 self.pacman.set_direction((1, 0))
         elif event.key == pygame.K_LEFT:
-            if self.check_collision((-1,0)) == False:
+            if self.check_collision((-1, 0)) == False:
                 self.pacman.set_direction((-1, 0))
         elif event.key == pygame.K_UP:
-            if self.check_collision((0,1)) == False:
-                self.pacman.set_direction((0, 1))
-        elif event.key == pygame.K_DOWN:
-            if self.check_collision((0,-1)) == False:
+            if self.check_collision((0, -1)) == False:
                 self.pacman.set_direction((0, -1))
+        elif event.key == pygame.K_DOWN:
+            if self.check_collision((0, 1)) == False:
+                self.pacman.set_direction((0, 1))
         else:
             pass
 
