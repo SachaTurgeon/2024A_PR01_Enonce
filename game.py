@@ -161,12 +161,21 @@ class Game:
 
             # TODO: Ajouter des points au score du joueur pour la pièce collectée (par exemple, 10 points)
 
+        if (self.pacman.x, self.pacman.y) in self.coins:
+            self.coins.remove((self.pacman.x, self.pacman.y))
+            self.score += 10
+
         if len(self.coins) == 0:
             self.end.render(True)
             self.game_won = True
             self.game_over = True
 
     def check_special_coins(self):
+        if (self.pacman.x, self.pacman.y) in self.special_coins:
+            self.special_coins.remove((self.pacman.x, self.pacman.y))
+            self.score += 50
+            self.activate_eat_mode()
+
         pass
         # TODO: Vérifier si la position actuelle de Pac-Man (en coordonnées de grille) correspond à une position de pièce spéciale
 
