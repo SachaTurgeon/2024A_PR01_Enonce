@@ -86,8 +86,8 @@ class Ghost:
         # TODO: Mélanger aléatoirement les directions pour simuler un choix aléatoire avec `random.shuffle()`
         random.shuffle(self.direction_list)
         # TODO: Parcourir chaque direction et vérifier si elle est valide (pas de collision avec un mur)
-        #self.direction = self.direction_list[0]
-        #self.move()
+        """self.direction = self.direction_list[0]
+        self.move()"""
         for index, i in enumerate(self.direction_list):
             next_x = self.pos[0] + i[0] * self.speed
             next_y = self.pos[1] + i[1] * self.speed
