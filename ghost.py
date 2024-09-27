@@ -85,12 +85,10 @@ class Ghost:
         # TODO: Mélanger aléatoirement les directions pour simuler un choix aléatoire avec `random.shuffle()`
         random.shuffle(self.direction_list)
         # TODO: Parcourir chaque direction et vérifier si elle est valide (pas de collision avec un mur)
-        for index, i in enumerate(self.direction_list):
-            next_x = self.pos[0] + i[0] * self.speed
-            next_y = self.pos[1] + i[1] * self.speed
-            next_rect = pygame.Rect(next_x, next_y, GHOST_SIZE[0], GHOST_SIZE[1])
+        for i in self.direction_list:
+            next_rect = pygame.Rect(self.pos[0] + i[0] * self.speed, self.pos[1] + i[1] * self.speed, GHOST_SIZE[0], GHOST_SIZE[1])
             if self.check_collision(next_rect) == False:
-                self.direction = self.direction_list[index]
+                self.direction = i
                 break
 
         return self.direction
