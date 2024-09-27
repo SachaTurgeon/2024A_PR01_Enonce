@@ -128,11 +128,8 @@ class Game:
     def check_collision(self, direction):
         dx, dy = direction[0], direction[1]
         new_x, new_y = self.pacman.x + dx, self.pacman.y + dy
-        if self.board[new_y][new_x] == 1:
-            return True
-        else:
-            return False
-        pass
+        return(self.board[new_y][new_x] == 1)
+        
         # TODO: Extraire les coordonnées de déplacement de la direction (dx, dy)
 
         # TODO: Calculer la nouvelle position de Pac-Man après le déplacement (new_x, new_y) avec la formule new_x = self.pacman.x + dx
@@ -176,7 +173,6 @@ class Game:
             self.score += 50
             self.activate_eat_mode()
 
-        pass
         # TODO: Vérifier si la position actuelle de Pac-Man (en coordonnées de grille) correspond à une position de pièce spéciale
 
             # TODO: Si Pac-Man est sur une pièce spéciale, retirer cette pièce spéciale de la liste
